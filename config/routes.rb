@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get "/people/:id" => "people#show"
 
 
-    get "/organizations" => "people#index"
-    get "/organizations" => "photos#show"
+    get "/organizations" => "organizations#index"
+    get "/organizations/:id" => "organizations#show"
   end
 end
