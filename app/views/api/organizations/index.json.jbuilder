@@ -1,4 +1,7 @@
 json.array! @organizations.each do |organization|
   json.id organization.id
   json.name organization.name
+  json.phone organization.phone
+  json.people_count organization.people_count
+  json.address organization.address
 end
