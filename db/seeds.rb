@@ -36,34 +36,35 @@ csv.each do |row|
     # 4. Create person - and assign person the organiztion id
 
 
-    o = Organization.new
-    o.name = row[4]
-    o.phone = row[5]
-    o.domain = row[6]
-    o.save
-    puts "#{o.name} saved"
+  o = Organization.new
+  o.name = row[4]
+  o.phone = row[5]
+  o.domain = row[6]
+  o.save
+  puts "#{o.name} saved"
 
-    # a = Address.create(
-    # street: row[7],
-    # city: row[8],
-    # state: row[9],
-    # zip: row[10]
-    # )
-    # puts "#{a.street}, #{a.city} #{a.state} #{a.id} saved"
+  p = Person.new
+  p.name = row[0]
+  p.job_title = row[1]
+  p.email_address = row[2]
+  p.phone = row[3]
+  p.organization_id = o.id
+  p.save
+  puts "#{p.name} saved"
+
+  a = Address.new
+  a.street = row[7]
+  a.city = row[8]
+  a.state = row[9]
+  a.zip = row[10]
+  a.organization_id = o.id
+  puts "#{a.street}, #{a.city} #{a.state} #{a.id} saved"
 
     # o.update(address_id: a.id)
 
 
-    p = Person.new
-    p.name = row[0]
-    p.job_title = row[1]
-    p.email_address = row[2]
-    p.phone = row[3]
-    p.organization_id = o.id
-    # p.address_id = a.id
-    p.save
-    puts "#{p.name} saved"
 
-  end
+
+end
 
 
