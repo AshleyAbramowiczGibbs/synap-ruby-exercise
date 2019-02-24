@@ -20,32 +20,50 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', csv_file))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
 
-    o = Organization.create
+    # a = Address.new
+    # a.street = row[7]
+    # a.city = row[8]
+    # a.state = row[9]
+    # a.zip = row[10]
+    # a.save
+    # a.reload
+
+    #if org doesn't exist create new
+
+    # 1. Check whether organization exists
+    # 2. If not, create organization - and create its address - assign address the organization id
+    # 3. Either way, hold on to the organization with a variable
+    # 4. Create person - and assign person the organiztion id
+
+
+    o = Organization.new
     o.name = row[4]
     o.phone = row[5]
     o.domain = row[6]
-    o.address_id = address.id
+    o.save
     puts "#{o.name} saved"
 
-    p = Person.create
+    # a = Address.create(
+    # street: row[7],
+    # city: row[8],
+    # state: row[9],
+    # zip: row[10]
+    # )
+    # puts "#{a.street}, #{a.city} #{a.state} #{a.id} saved"
+
+    # o.update(address_id: a.id)
+
+
+    p = Person.new
     p.name = row[0]
     p.job_title = row[1]
     p.email_address = row[2]
     p.phone = row[3]
-    p.organization_id = organization.id
-    p.address_id = address.id
+    p.organization_id = o.id
+    # p.address_id = a.id
+    p.save
     puts "#{p.name} saved"
 
-
-    a = Address.create
-    a.street = row[7]
-    a.city = row[8]
-    a.state = row[9]
-    a.zip = row[10]
-    puts "#{a.street}, #{a.city} #{a.state} saved"
   end
 
 
-puts "There are now #{Person.count} rows in the Person table"
-puts "There are now #{Organization.count} rows in the Organization table"
-puts "There are now #{Address.count} rows in the Address table"

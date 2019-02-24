@@ -5,5 +5,5 @@ json.array! @people.each do |person|
   json.email_address person.email_address
   json.phone person.phone
   json.organization person.organization
-  json.address person.address
+  # json.address person.organization.address
 end
