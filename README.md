@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to A Very Simple CRM.
 
-Things you may want to cover:
+#Live App
 
-* Ruby version
+Please find the back-end API and all the features 
 
-* System dependencies
+#Build Setup
 
-* Configuration
+* Ruby version 2.5.1
 
-* Database creation
+``` bash
+# Clone project
+git clone https://github.com/AshleyAbramowiczGibbs/synap-ruby-exercise.git
 
-* Database initialization
+# Install Gems
+$ bundle install
 
-* How to run the test suite
+#start local server
+rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+Visit the app at [http://localhost:3000](http://localhost:3000)
 
-* Deployment instructions
-
-* ...
+API endpoints for retrieving data 
+GET /people.json
+GET /people/:id.json
+GET /organizations.json
+GET /organizations/:id.json
+```
