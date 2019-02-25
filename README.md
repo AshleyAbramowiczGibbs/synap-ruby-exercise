@@ -5,10 +5,10 @@ Welcome to A Very Simple CRM.
 # Live App
 
 Please find the back-end API endpoints for retrieving data 
-GET https://a-simple-crm.herokuapp.com/api/people.json
-GET https://a-simple-crm.herokuapp.com/api/people/:id.json
-GET https://a-simple-crm.herokuapp.com/api/organizations.json
-GET https://a-simple-crm.herokuapp.com/api/organizations/:id.json
+* GET https://a-simple-crm.herokuapp.com/api/people.json
+* GET https://a-simple-crm.herokuapp.com/api/people/:id.json
+* GET https://a-simple-crm.herokuapp.com/api/organizations.json
+* GET https://a-simple-crm.herokuapp.com/api/organizations/:id.json
 
 # Build Setup
 
