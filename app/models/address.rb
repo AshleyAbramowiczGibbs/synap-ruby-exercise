@@ -1,6 +1,4 @@
 class Address < ApplicationRecord
-
+  #model associations go here
   belongs_to :organization
-  # belongs_to :person
-
 end

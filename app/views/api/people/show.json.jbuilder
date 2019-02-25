@@ -1,2 +1,1 @@
-json.id @person.id
-json.name @person.name
+json.partial! "person.json.jbuilder", person: @person
